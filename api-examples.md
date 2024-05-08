@@ -2,54 +2,25 @@
 outline: deep
 ---
 
-# vue3 发布订阅模式设计解析
+# vue3 表单的数据双向绑定
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+<script>
+<input
+  :value="text"
+  @input="event => text = event.target.value">
+<input v-model="text">
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
-
-```md
-<script setup>
-import { useData } from 'vitepress'
-
-const { theme, page, frontmatter } = useData()
 </script>
 
-## Results
+## 如何时间组件之间的数据双向绑定
 
-### Theme Data
+<script>
 
-<pre>{{ theme }}</pre>
+ </script>
 
-### Page Data
+## 解析
 
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-
-<pre>{{ frontmatter }}</pre>
-```
-
-<script setup>
-import { useData } from 'vitepress'
-
-const { site, theme, page, frontmatter } = useData()
-</script>
-
-## Results
-
-### Theme Data
-
-<pre>{{ theme }}</pre>
-
-### Page Data
-
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-
-<pre>{{ frontmatter }}</pre>
-
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+什么是单向绑定，什么是双向绑定
+单向绑定：数据驱动视图，ref react 返回的代理对象，发生变化的时候，就会驱动 template 模板，然后重新渲染页面
+双向绑定，数据驱动试图，试图驱动数据的变化
+这个地方我们通过 input 事件 注意这个地方还有一个 change 事件，但是 chang 事件是需要失去焦点的，所以不符合业务场景，拿到输入的值，然后赋值给 text 变量，然后通过 v-model 绑定到 input 上，这样就实现了双向绑定，所以说 v-model 就是 input 事件和赋值操作的封装
