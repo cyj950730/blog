@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "eslint": "^8.56.0",
-    "eslint-config-hexo": "^5.0.0",
+    "eslint-config-hexo": "^6.0.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-react": "^7.33.2"
   },
